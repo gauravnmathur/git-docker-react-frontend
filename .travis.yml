@@ -1,0 +1,10 @@
+sudo: required # Any time you use docker you need superuser permissions
+services:
+    - docker # Need docker CLI. Travis-CI installs a docker CLI in the container
+
+before_install:
+    - docker build -t narainmg/git-docker-react-frontend -f Dockerfile.dev .
+
+script:
+    - docker run narainmg/git-docker-react-frontend npm run test -- --coverage
+
