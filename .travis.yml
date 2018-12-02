@@ -15,10 +15,8 @@ deploy:
     env: "GitDockerReactFrontend-env"
     bucket_name: "elasticbeanstalk-us-west-2-923770981229"
     bucket_path: "git-docker-react-frontend"
-
     on:
         branch: master
-
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_KEY
+    access_key_id: "$AWS_ACCESS_KEY"
+    secret_access_key: "$AWS_SECRET_KEY"
 
