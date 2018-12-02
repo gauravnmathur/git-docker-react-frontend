@@ -8,3 +8,18 @@ before_install:
 script:
     - docker run narainmg/git-docker-react-frontend npm run test -- --coverage
 
+deploy:
+    provider: elasticbeanstalk
+    region: "us-west-2"
+    app: "git-docker-react-frontend"
+    env: "GitDockerReactFrontend-env"
+    bucket_name: "elasticbeanstalk-us-west-2-923770981229"
+    bucket_path: "git-docker-react-frontend"
+
+    on:
+        branch: master
+
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: 
+        secure: "$AWS_SECRET_KEY"
+
